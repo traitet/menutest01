@@ -2,8 +2,9 @@
 // 1) IMPORT
 //============================================================================
 import 'package:flutter/material.dart';
+import 'package:menutest01/Widgets/DashboardMenu.dart';
 import 'package:menutest01/forgotPassword.dart';
-import 'package:menutest01/mainmenu.dart';
+//import 'package:menutest01/mainmenu.dart';
 import 'package:menutest01/signup.dart';
 import 'package:menutest01/CustomIcons.dart';
 import 'package:menutest01/Widgets/SocialIcon.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Inno WFH',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -47,7 +48,7 @@ class MyHomePage extends StatefulWidget {
 // MY APP
 //============================================================================
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  int _counter = 2020;
   //============================================================================
   // FUNTION
   //============================================================================
@@ -64,23 +65,44 @@ class _MyHomePageState extends State<MyHomePage> {
       //============================================================================
       // 1) APP BAR
       //============================================================================        
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      //appBar: AppBar(
+        //title: Text(widget.title),
+      //),
       //============================================================================
       // 2) BODY
       //============================================================================        
-      body: Center(
-      //============================================================================
-      // 3) CHILD: COLUMN
-      //============================================================================         
-        child: Column(
+      body: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+        //==============================================
+        // CONTAINER
+        //==============================================            
+        Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage('assets/images/login_bg.jpg')
+                    )
+               ),
+              ),     
+        //==============================================
+        // PADDING ALL
+        //============================================== 
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+            //children: <Widget>[]                
+            //============================================================================
+            // 3) CHILD: COLUMN
+            //============================================================================         
+            // child: Column(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
             //======================================================================
             // 1) LABEL
-            //======================================================================            
-            Text('You have pushed the button this many times:',),
+            //======================================================================  
+            Text('i-SEE',style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold),),                         
             //======================================================================
             // 2) TEST (COUNTER)
             //======================================================================
@@ -101,14 +123,14 @@ class _MyHomePageState extends State<MyHomePage> {
             // 6) BUTTON LOGIN
             //======================================================================
             SizedBox(height: 10.0,),  
-            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MyMainMenuPage()),);}, 
+            RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardMenu()),);}, 
             color: Colors.blue, 
-            child: Text('CLICK TO LOGIN',style: TextStyle(fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.bold),), ),            
+            child: Text('CLICK TO LOGIN',style: TextStyle(fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.normal),), ),            
             //======================================================================
             // 7) TEXT SOCIAL NETWORK LOGIN
             //======================================================================
             SizedBox(height: 20.0,),            
-            Text('Social Network Login',style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),),   
+            Text('Social Network Login',style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.normal),),   
             SizedBox(height: 10.0,),      
             //======================================================================
             // 8) IMAGE BUTTON: LOGIN BY SOCIAL NETWORK
@@ -128,22 +150,24 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-              RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MySignupPage()),);},child: Text('Register New Account'),),
-              RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MyForgotPasswordPage()),);},child: Text('Forgot Password'),),                
+              RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MySignupPage()),);},color: Colors.blue[100], child: Text('Register New Account',style: TextStyle(fontSize: 15.0, color: Colors.black38, fontWeight: FontWeight.normal),),),
+              RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MyForgotPasswordPage()),);},color: Colors.blue[100], child: Text('Forgot Password',style: TextStyle(fontSize: 15.0, color: Colors.black38, fontWeight: FontWeight.normal),),),                
               ],
             ),
             //======================================================================
             // 10) SPARED
             //======================================================================
-            //RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MyMainMenuPage()),);},child: Text('Main Menu'),),
+            //RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardMenu()),);},child: Text('Dashboard'),),
           ],
-        ),
-      ),
+          ),
 
-      //============================================================================
-      // 4) FLOAT BUTTON
-      //============================================================================    
-      floatingActionButton: FloatingActionButton(
+      ),
+         ],
+      ),
+        //============================================================================
+        // 4) FLOAT BUTTON
+        //============================================================================    
+        floatingActionButton: FloatingActionButton(
         //==========================================================================
         // CALL FUNCTION _INCREASECOUNTER
         //==========================================================================     

@@ -6,6 +6,8 @@ import 'package:menutest01/form.dart';
 import 'package:menutest01/report.dart';
 import 'package:menutest01/search.dart';
 
+import 'Widgets/NavDrawer.dart';
+
 //===========================================================
 // 2) MAIN CLASS
 //===========================================================
@@ -24,6 +26,7 @@ class MyMainMenuPage extends StatefulWidget {
     //=======================================================
     Widget build(BuildContext context){
       return Scaffold(
+        drawer: NavDrawer(),
         //===================================================
         // 2) APP BAR
         //===================================================      
