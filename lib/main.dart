@@ -102,8 +102,8 @@ class _MyHomePageState extends State<MyHomePage> {
             //======================================================================
             SizedBox(height: 10.0,),  
             RaisedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MyMainMenuPage()),);}, 
-            color: Colors.black12, 
-            child: Text('CLICK TO LOGIN',style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),), ),            
+            color: Colors.blue, 
+            child: Text('CLICK TO LOGIN',style: TextStyle(fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.bold),), ),            
             //======================================================================
             // 7) TEXT SOCIAL NETWORK LOGIN
             //======================================================================

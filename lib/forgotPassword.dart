@@ -29,10 +29,30 @@ class MyForgotPasswordPage extends StatefulWidget {
         // 3) BODY
         //===================================================              
         body: Center(
-          //=================================================
-          // 4) CHILD: BUTTON
-          //=================================================               
-          child: RaisedButton(onPressed:() {},child: Text('Go Back'), ),
+      //============================================================================
+      // 3) CHILD: COLUMN
+      //============================================================================                   
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            //======================================================================
+            // 1) TEXT
+            //======================================================================
+            SizedBox(height: 40.0,),  
+            Text('Dont worry. Reset your password is easy.',),      
+            Text('Just will e-mail and click SEND',),                    
+             //=====================================================================
+            // 2) E-MAIL
+            //======================================================================             
+            TextFormField(decoration: InputDecoration(labelText: 'E-mail', prefixIcon: Icon(Icons.email)),),
+             //=====================================================================
+            // 3) BUTTON
+            //======================================================================  
+            SizedBox(height: 10.0,),  
+            RaisedButton(onPressed: (){}, 
+            color: Colors.blue, 
+            child: Text('SEND',style: TextStyle(fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.bold),), ),            
+          ])
         ),
       );
     } //END WIDGET
